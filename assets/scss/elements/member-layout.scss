@@ -1,0 +1,38 @@
+.members_wrapper {
+
+    padding-top: 30px;
+    border-top: 1px solid #242a3e;
+
+    & .member_name {
+        font-weight: 700;
+        padding-bottom: 5px;
+    }
+    
+    & .grid_row {
+        padding-bottom: 20px;
+    }
+
+    & .label, .divider {
+        display: inline-block;
+    }
+
+    & .label {
+        width: 70px;
+        display: inline-block;
+    }
+
+    & .divider {
+        padding: 0 8px 0 3px;
+    }
+
+    & .val {
+        white-space: nowrap;
+        font-family: 'Roboto Mono', Courier, monospace;
+        font-size: 15px;
+    }
+
+    .grid_element {
+        padding-bottom: 5px;
+    }
+   
+}

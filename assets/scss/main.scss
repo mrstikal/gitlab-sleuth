@@ -1,0 +1,56 @@
+@import './elements/templates.scss';
+@import './elements/input.scss';
+@import './elements/member-layout.scss';
+
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	outline: none;
+}
+
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+html {
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+html * {
+	max-height: 1000000px;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #242a3e;
+}
+
+p, h1, h2, h3, h4 {
+	display: block;
+	position: relative;
+}
+
+li {
+	list-style-type: none;
+}
+
+div, a, span {
+	position: relative;
+}
+
+.layout_wrapper {
+    max-width: 1200px;
+    margin: 90px auto 80px auto;
+}
+
