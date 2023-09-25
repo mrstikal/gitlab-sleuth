@@ -1,4 +1,4 @@
-import * as pkg from "vue-toastification"
+import * as pkg from 'vue-toastification'
 
 const { TYPE, useToast } = pkg;
 

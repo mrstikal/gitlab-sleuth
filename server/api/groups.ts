@@ -1,7 +1,6 @@
 import { $fetch } from 'ofetch';
 import getConfigs from '~/server/utils/getConfig';
-import { ConfigType } from '~/types';
-import { GroupType } from '~/types';
+import { ConfigType, GroupType } from '~/types';
 
 export default defineEventHandler(async (event) => {
 
@@ -21,9 +20,9 @@ export default defineEventHandler(async (event) => {
     const fetchFirstGroup = async () => {
 
         const group: any = await $fetch(`${baseUrl}groups/${group_id}`, {
-            headers: { 'PRIVATE-TOKEN': privateToken,  'Cache-Control': "max-age=0, must-revalidate, public"}
+            headers: { 'PRIVATE-TOKEN': privateToken, 'Cache-Control': 'max-age=0, must-revalidate, public' }
         });
-        
+
         groups.push({
             id: group.id,
             name: group.full_path

@@ -1,0 +1,18 @@
+{
+    "extends": [
+      "@nuxtjs/eslint-config-typescript"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "off"
+      ],
+      "padded-blocks":"off",
+      "semi":"off",
+      "vue/html-indent":"off",
+      "indent":"off",
+      "vue/html-self-closing":"off",
+      "eqeqeq":"off",
+      "vue/multi-word-component-names":"off",
+      "camelcase":"off"
+    }
+  }

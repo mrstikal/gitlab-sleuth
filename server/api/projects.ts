@@ -1,7 +1,6 @@
 import { $fetch } from 'ofetch';
 import getConfigs from '~/server/utils/getConfig';
-import { ConfigType } from '~/types';
-import { ProjectType } from '~/types';
+import { ConfigType, ProjectType } from '~/types';
 
 export default defineEventHandler(async (event) => {
 
@@ -21,7 +20,7 @@ export default defineEventHandler(async (event) => {
     const fetchProjects = async () => {
 
         while (!projectsFinished) {
-            let data: any = await $fetch(`${baseUrl}groups/${group_id}/projects?include_subgroups=true&page=${pageOffset}&per_page=${perPage}`, {
+            const data: any = await $fetch(`${baseUrl}groups/${group_id}/projects?include_subgroups=true&page=${pageOffset}&per_page=${perPage}`, {
                 headers: { 'PRIVATE-TOKEN': privateToken }
             });
             if (data.length > 0) {

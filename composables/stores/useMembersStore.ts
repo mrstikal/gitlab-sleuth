@@ -1,12 +1,10 @@
-import { defineStore } from "pinia";
-import useToaster from "~/composables/helpers/useToaster";
-import { MemberType } from '~/types';
-import { ProjectType } from '~/types';
-import { GroupType } from '~/types';
+import { defineStore } from 'pinia';
+import useToaster from '~/composables/helpers/useToaster';
+import { MemberType, ProjectType, GroupType } from '~/types';
 
 const route: string = '/api/members';
 
-const useMembersStore = defineStore("members", {
+const useMembersStore = defineStore('members', {
     state: () => ({
         groups: [] as GroupType[],
         projects: [] as ProjectType[],
@@ -14,14 +12,14 @@ const useMembersStore = defineStore("members", {
         membersFetchSuccess: true
     }),
     actions: {
-        async getMembers() {
+        async getMembers () {
             try {
                 if (this.groups.length && this.projects.length) {
                     const data: [] = await $fetch(route, {
                         method: 'POST',
                         body: {
                             groups_param: this.groups,
-                            projects_param: this.projects,
+                            projects_param: this.projects
                         }
                     });
                     if (Object.keys(data).length) {

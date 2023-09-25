@@ -1,7 +1,6 @@
 import { $fetch } from 'ofetch';
 import getConfigs from '~/server/utils/getConfig';
-import { ConfigType } from '~/types';
-import { MemberType } from '~/types';
+import { ConfigType, MemberType } from '~/types';
 
 const members: MemberType = {};
 
@@ -32,7 +31,7 @@ export default defineEventHandler(async (event) => {
 
         if (Object.keys(groups_param).length) {
 
-            for (let group of groups_param) {
+            for (const group of groups_param) {
 
                 let finished = false;
                 let offset: number = 0;
@@ -77,7 +76,7 @@ export default defineEventHandler(async (event) => {
 
         if (Object.keys(projects_param).length) {
 
-            for (let project of projects_param) {
+            for (const project of projects_param) {
 
                 let finished = false;
                 let offset: number = 0;

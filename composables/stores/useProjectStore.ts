@@ -1,22 +1,22 @@
-import { defineStore } from "pinia";
-import useToaster from "~/composables/helpers/useToaster";
+import { defineStore } from 'pinia';
+import useToaster from '~/composables/helpers/useToaster';
 import { ProjectType } from '~/types';
 
 const route: string = '/api/projects';
 
-const useProjectStore = defineStore("projects", {
+const useProjectStore = defineStore('projects', {
     state: () => ({
         topGroupId: '0',
         projects: [] as ProjectType[],
         projectsFetchSuccess: true
     }),
     actions: {
-        async getProjects() {
+        async getProjects () {
             if (this.topGroupId !== '0') {
                 try {
                     const data: [] = await $fetch(route, {
                         method: 'POST',
-                        "Cache-Control": "no-cache",
+                        'Cache-Control': 'no-cache',
                         body: {
                             group_id: this.topGroupId
                         }
@@ -28,7 +28,7 @@ const useProjectStore = defineStore("projects", {
                     useToaster(`Route ${route} is unavailable`, 'error');
                 }
             }
-        },
+        }
     }
 })
 
